@@ -16,14 +16,14 @@ live_config_reload: true
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+  TERM: alacritty
 
 window:
   # Window dimensions (changes require restart)
@@ -64,7 +64,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: full
+  decorations: full 
 
   # Background opacity
   #
@@ -81,7 +81,7 @@ window:
   #
   # Values for `startup_mode` (macOS only):
   #   - SimpleFullscreen
-  #startup_mode: SimpleFullscreen
+  startup_mode: maximized 
 
   # Window title
   title: ' '
@@ -204,6 +204,31 @@ colors:
   primary:
     background: '#0d1117'
     foreground: '#ffffff'
+  cursor:
+    text: '0x30363d'
+    cursor: '0xe6edf3'
+
+  # Normal colors
+  normal:
+    black: '0x484f58'
+    red: '0xff7b72'
+    green: '0x3fb950'
+    yellow: '0xd29922'
+    blue: '0x58a6ff'
+    magenta: '0xbc8cff'
+    cyan: '0x39c5cf'
+    white: '0xb1bac4'
+
+  # Bright colors
+  bright:
+    black: '0x6e7681'
+    red: '0xffa198'
+    green: '0x56d364'
+    yellow: '0xe3b341'
+    blue: '0x79c0ff'
+    magenta: '0xbc8cff'
+    cyan: '0x39c5cf'
+    white: '0xb1bac4'
 
     # Bright and dim foreground colors
     #
