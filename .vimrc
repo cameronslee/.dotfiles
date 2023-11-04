@@ -13,7 +13,9 @@ colorscheme lunaperche
 set background=dark
 
 let g:mapleader = " "
-nnoremap <leader>pv :Lex<CR>
+nnoremap <leader>pv :Ex<CR>
+
+nnoremap <leader>sp :set invpaste<CR>
 
 let g:netrw_banner = 0
-let g:netrw_winsize = 15
+
