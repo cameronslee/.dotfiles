@@ -1,7 +1,5 @@
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
-live_config_reload: true
-
 # Import additional configuration files
 #
 # Imports are loaded in order, skipping all missing files, with the importing
@@ -466,7 +464,7 @@ cursor:
   #thickness: 0.15
 
 # Live config reload (changes require restart)
-#live_config_reload: true
+live_config_reload: true
 
 # Shell
 #
