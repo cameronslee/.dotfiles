@@ -1,1 +1,7 @@
-# .dotfiles
+# .config
+
+Environment:
+vim
+alacritty
+zsh
+
