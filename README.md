@@ -1,7 +1,8 @@
 # .config
 
 Environment:
-vim
-alacritty
-zsh
+- vim
+- alacritty
+- tmux
+- zsh
 
