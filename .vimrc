@@ -6,7 +6,6 @@ set autoindent
 set smartindent
 set number
 set hlsearch
-set incsearch
 set ruler
 set mouse=a
 set visualbell
@@ -18,5 +17,8 @@ nnoremap <leader>pv :Ex<CR>
 let g:netrw_banner = 0
 
 nnoremap <leader>sp :set invpaste<CR>
+
+" will i regret this only time will tell
+set clipboard=unnamed
 
 
