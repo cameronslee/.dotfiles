@@ -62,7 +62,7 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: none 
+  decorations: full 
 
   # Background opacity
   #
@@ -196,11 +196,12 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night)
 colors:
   # Default colors
   primary:
-    background: '#0d1117'
+    #background: '#0b0e12'
+    background: '#121212'
+
     foreground: '#ffffff'
   cursor:
     text: '0x30363d'
@@ -208,25 +209,25 @@ colors:
 
   # Normal colors
   normal:
-    black: '0x484f58'
-    red: '0xff7b72'
-    green: '0x3fb950'
-    yellow: '0xd29922'
-    blue: '0x58a6ff'
+    black:   '0x484f58'
+    red:     '0xff7b72'
+    green:   '0x3fb950'
+    yellow:  '0xd29922'
+    blue:    '0x58a6ff'
     magenta: '0xbc8cff'
-    cyan: '0x39c5cf'
-    white: '0xb1bac4'
+    cyan:    '0x39c5cf'
+    white:   '0xb1bac4'
 
   # Bright colors
   bright:
-    black: '0x6e7681'
-    red: '0xffa198'
-    green: '0x56d364'
-    yellow: '0xe3b341'
-    blue: '0x79c0ff'
-    magenta: '0xbc8cff'
-    cyan: '0x39c5cf'
-    white: '0xb1bac4'
+    black:   '0x6e7681'
+    red:     '0xffa198'
+    green:   '0x56d364'
+    yellow:  '0xe3b341'
+    blue:    '0x79c0ff'
+    magenta: '0xd2a8ff'
+    cyan:    '0x56d4dd'
+    white:   '0xf0f6fc'
 
     # Bright and dim foreground colors
     #
@@ -793,7 +794,7 @@ live_config_reload: true
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
-#key_bindings:
+key_bindings:
   #- { key: Paste,                                       action: Paste          }
   #- { key: Copy,                                        action: Copy           }
   #- { key: L,         mods: Control,                    action: ClearLogNotice }
@@ -901,7 +902,8 @@ live_config_reload: true
   #- { key: Q,              mods: Command,                    action: Quit                  }
   #- { key: W,              mods: Command,                    action: Quit                  }
   #- { key: N,              mods: Command,                    action: CreateNewWindow       }
-  #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
+  - { key: F,              mods: Command|Control,            action: ToggleFullScreen}
+  - { key: Up,              mods: Command|Control,            action: ToggleMaximized}
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
 
