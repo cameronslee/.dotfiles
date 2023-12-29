@@ -4,13 +4,20 @@ alias o='open .'
 alias n='neofetch'
 alias m='make'
 alias p='python'
+alias le='less'
 alias cl='clear'
 
 alias gc='git commit -m'
+alias ga='git add'
+alias gaa='git add -A'
+alias gs='git status'
+alias gl='git log'
+alias gd='git diff'
+alias gh='git log > /tmp/history && vim /tmp/history'
+alias vgh='vim /tmp/history'
+
 alias hg='history | grep'
 alias h='history'
-alias ll='ls -lAh --color=auto'
-alias ls='ls --color=auto'
+alias l='ls -lAh'
 
 alias mkdir='mkdir -pv'
-
