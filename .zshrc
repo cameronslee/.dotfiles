@@ -4,6 +4,7 @@ alias o='open .'
 alias n='neofetch'
 alias m='make'
 alias p='python'
+alias pyhelp='python -c "help()"'
 alias le='less'
 alias cl='clear'
 
