@@ -1,6 +1,6 @@
 syntax on
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set autoindent
 set smartindent
@@ -14,7 +14,6 @@ set visualbell
 colorscheme lunaperche 
 set background=dark
 highlight Normal ctermbg=233
-"highlight Comment ctermfg=gray
 
 let g:mapleader = " "
 nnoremap <leader>pv :Ex<CR>
