@@ -16,7 +16,7 @@ set background=dark
 highlight Normal ctermbg=233
 
 let g:mapleader = " "
-nnoremap <leader>pv :Ex<CR>
+nnoremap <leader>sf :Ex<CR>
 let g:netrw_banner = 0
 
 nnoremap <leader>sp :set invpaste<CR>
