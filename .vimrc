@@ -22,5 +22,6 @@ let g:netrw_banner = 0
 nnoremap <leader>sp :set invpaste<CR>
 
 set path=.,**,,
+nnoremap <Leader>f :find<Space>
 
 set clipboard=unnamed
