@@ -11,12 +11,13 @@ set ruler
 set mouse=a
 set visualbell
 
-colorscheme lunaperche 
+colorscheme lunaperche
 set background=dark
 highlight Normal ctermbg=233
 
 let g:mapleader = " "
 nnoremap <leader>sf :Ex<CR>
+let g:netrw_winsize = 30
 let g:netrw_banner = 0
 
 nnoremap <leader>sp :set invpaste<CR>
@@ -24,4 +25,13 @@ nnoremap <leader>sp :set invpaste<CR>
 set path=.,**,,
 nnoremap <Leader>f :find<Space>
 
-set clipboard=unnamed
+set clipboard=unnamedplus
+
+" buffer movements
+nnoremap <Leader>n :bn<CR>
+nnoremap <Leader>p :bp<CR>
+
+
+" Command line 
+nnoremap <Leader>c q:
+
