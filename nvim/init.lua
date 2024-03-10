@@ -50,8 +50,8 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace in the editor.
 --  See :help 'list'
 --  and :help 'listchars'
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+--vim.opt.list = true
+--vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -108,13 +108,13 @@ vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper win
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
-})
+--vim.api.nvim_create_autocmd("TextYankPost", {
+--	desc = "Highlight when yanking (copying) text",
+--	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+--	callback = function()
+--		vim.highlight.on_yank()
+--	end,
+--})
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -643,20 +643,46 @@ require("lazy").setup({
 		-- change the command in the config to whatever the name of that colorscheme is
 		--
 		-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`
-		"mellow-theme/mellow.nvim",
+		"miikanissi/modus-themes.nvim",
 		lazy = false, -- make sure we load this during startup if it is your main colorscheme
 		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
+			-- Default options
+			require("modus-themes").setup({
+				-- Theme comes in two styles `modus_operandi` and `modus_vivendi`
+				-- `auto` will automatically set style based on background set with vim.o.background
+				style = "modus_vivendi",
+				variant = "default", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
+				transparent = true, -- Transparent background (as supported by the terminal)
+				dim_inactive = false, -- "non-current" windows are dimmed
+				styles = {
+					-- Style to be applied to different syntax groups
+					-- Value is any valid attr-list value for `:help nvim_set_hl`
+					comments = { italic = true },
+					keywords = { italic = true },
+					functions = {},
+					variables = {},
+				},
+
+				--- You can override specific color groups to use other groups or a hex color
+				--- function will be called with a ColorScheme table
+				---@param colors ColorScheme
+				on_colors = function(colors) end,
+
+				--- You can override specific highlights to use other groups or a hex color
+				--- function will be called with a Highlights and ColorScheme table
+				---@param highlights Highlights
+				---@param colors ColorScheme
+				on_highlights = function(highlights, colors) end,
+			})
 			-- Load the colorscheme here
-			vim.cmd.colorscheme("lunaperche")
+			vim.cmd.colorscheme("modus")
 
 			-- You can configure highlights by doing something like
 			vim.cmd.hi("Comment gui=none")
-			vim.cmd.hi("Normal guibg=233")
+			--vim.cmd.hi("Normal guibg=233")
 		end,
 	},
-
-	-- Highlight todo, notes, etc in comments
 	{ "folke/todo-comments.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = { signs = false } },
 
 	{ -- Collection of various small independent plugins/modules
@@ -689,7 +715,7 @@ require("lazy").setup({
 			---@diagnostic disable-next-line: duplicate-set-field
 			-- statusline.section_location = function()
 			--return ''
-			--end
+			--endtritanopia
 
 			-- ... and there is more!
 			--  Check out: https://github.com/echasnovski/mini.nvim
