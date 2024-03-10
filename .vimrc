@@ -27,11 +27,11 @@ nnoremap <Leader>f :find<Space>
 
 set clipboard=unnamedplus
 
-" buffer movements
+
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>p :bp<CR>
 
-
-" Command line 
 nnoremap <Leader>c q:
+
+
 
