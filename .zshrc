@@ -1,7 +1,13 @@
+PATH="$PATH:/root/.cargo/bin"
+export PATH="$HOME/opt/cross/bin:$PATH"
+
+PS1='%n@%m %~$ '
+
 alias t='tmux'
 alias v='vim'
+alias n='nvim'
 alias o='open .'
-alias n='neofetch'
+alias nf='neofetch'
 alias m='make'
 alias p='python'
 alias pyhelp='python -c "help()"'
@@ -22,3 +28,5 @@ alias h='history'
 alias l='ls -lAh'
 
 alias mkdir='mkdir -pv'
+fpath+=${ZDOTDIR:-~}/.zsh_functions
+
