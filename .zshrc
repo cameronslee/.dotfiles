@@ -23,6 +23,8 @@ alias gd='git diff'
 alias gh='git log > /tmp/history && vim /tmp/history'
 alias vgh='vim /tmp/history'
 
+alias cfg='nvim ~/.config/'
+
 alias hg='history | grep'
 alias h='history'
 alias l='ls -lAh'
