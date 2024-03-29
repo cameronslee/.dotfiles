@@ -1,0 +1,62 @@
+live_config_reload = true
+
+[[colors.indexed_colors]]
+color = "0xfec43f"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xff9580"
+index = 17
+
+[colors.bright]
+black = "0x1e1e1e"
+blue = "0x338fff"
+cyan = "0x00eff0"
+green = "0x44df44"
+magenta = "0xff66ff"
+red = "0xff5f5f"
+white = "0x989898"
+yellow = "0xefef00"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x2fafff"
+cyan = "0x00d3d0"
+green = "0x44bc44"
+magenta = "0xfeacd0"
+red = "0xff5f59"
+white = "0xffffff"
+yellow = "0xd0bc00"
+
+[colors.primary]
+background = "#050608"
+foreground = "#f0f3f6"
+
+[cursor]
+blink_interval = 550
+blink_timeout = 30
+
+[cursor.style]
+blinking = "Always"
+shape = "Block"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 8.0
+
+[font.normal]
+family = "Monaco"
+style = "Regular"
+
+[scrolling]
+multiplier = 3
+
+[selection]
+save_to_clipboard = true
+
+[window]
+opacity = 0.99
+startup_mode = "Maximized"
+title = " "

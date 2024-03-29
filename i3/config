@@ -366,3 +366,6 @@ bindsym $mod+b exec firefox
 
 # open a new window of nautilus 
 bindsym $mod+o exec nautilus 
+
+# hhkb mode
+exec_always setxkbmap -layout us -option ctrl:swapcaps
