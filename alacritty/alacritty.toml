@@ -44,10 +44,10 @@ shape = "Block"
 TERM = "alacritty"
 
 [font]
-size = 8.0
+size = 10.0
 
 [font.normal]
-family = "Monaco"
+family = "Berkeley Mono"
 style = "Regular"
 
 [scrolling]
