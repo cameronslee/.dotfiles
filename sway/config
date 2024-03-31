@@ -1,4 +1,3 @@
-# Asahi Fedora Remix Sway Config 
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -24,6 +23,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --color 000000 --n
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+output * bg ~/Downloads/black.png fill
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -33,8 +33,10 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Brightness controls 
-bindsym XF86MonBrightnessUp exec brightnessctl set +10
-bindsym XF86MonBrightnessDown exec brightnessctl set 10-
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+#bindsym XF86MonBrightnessUp exec brightnessctl set +10
+#bindsym XF86MonBrightnessDown exec brightnessctl set 10-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -146,7 +148,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'CHIMP LIFE MOTHERFUCKERS' -B 'Yes, exit i3' 'i3-msg exit'"
+    bindsym $mod+Shift+e exec swaynag -t warning -m 'CHIMP LIFE MOTHERFUCKERS' -B 'Yes, exit sway' 'swaymsg exit'
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -197,26 +199,41 @@ exec_always feh --bg-fill /home/c/Downloads/black.png
 # open a new window of firefox
 bindsym $mod+b exec firefox
 
-bindsym $mod+o exec dolphin 
+bindsym $mod+o exec nautilus 
+#bindsym $mod+o exec dolphin
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
 bar {
-  status_command i3status -c /home/$USER/.config/i3status/i3status.conf
-  colors {
-      background $bgcolor
-      separator #191919
-      #                       border          background      text
-      focused_workspace       $bgcolor        $bgcolor        $text
-      inactive_workspace      $in-bgcolor     $in-bgcolor     $text
-      urgent_workspace        $u-bgcolor      $u-bgcolor      $text
-  }
-  tray_output none
-  mode hide
-  hidden_state hide
+    position top
 
-  #position top
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
 }
+
+# The real hhkb
+input "2131:256:Topre_Corporation_HHKB_Professional" {
+    repeat_rate 100
+    repeat_delay 180
+}
+
+# hhkb for life
+input "1:1:AT_Translated_Set_2_keyboard" {
+    repeat_rate 100
+    repeat_delay 180
+    xkb_options ctrl:nocaps
+}
+
+# m2 air stuff
 input "1452:849:Apple_MTP_multi-touch" {
        dwt enabled
        tap enabled
