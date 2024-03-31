@@ -33,10 +33,10 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Brightness controls 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-#bindsym XF86MonBrightnessUp exec brightnessctl set +10
-#bindsym XF86MonBrightnessDown exec brightnessctl set 10-
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -230,19 +230,5 @@ input "2131:256:Topre_Corporation_HHKB_Professional" {
 input "1:1:AT_Translated_Set_2_keyboard" {
     repeat_rate 100
     repeat_delay 180
-    xkb_options ctrl:nocaps
-}
-
-# m2 air stuff
-input "1452:849:Apple_MTP_multi-touch" {
-       dwt enabled
-       tap enabled
-       natural_scroll disabled
-       middle_emulation enabled
-   }
-
-input "1452:849:Apple_MTP_keyboard" {
-    repeat_rate 100
-    repeat_delay 180
-    xkb_options ctrl:nocaps
+    xkb_options ctrl:nocaps,altwin:swap_alt_win
 }
