@@ -217,4 +217,4 @@ bindsym $mod+b exec firefox
 bindsym $mod+o exec nautilus 
 
 # hhkb mode
-exec --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id setxkbmap -device 17 -option ctrl:nocaps,altwin:swap_alt_win
